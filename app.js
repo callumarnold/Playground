@@ -1,5 +1,6 @@
 console.log("The word 'games' has " + countTheVowels("games").toString() + " vowels.");
 console.log("The word 'video' has " + countTheVowels("video").toString() + " vowels.");
+console.log("The word 'dog' has " + countTheVowels("dog").toString() + " vowels.");
 function countTheVowels(input) {
     //let wordArray: string[] = Object.assign([], input);
     var vowelCount = 0;
