@@ -1,8 +1,3 @@
-//console.log("The word 'games' has " + countTheVowels("games").toString() + " vowels.");
-//console.log("The word 'video' has " + countTheVowels("video").toString() + " vowels.");
-//console.log("The word 'dog' has " + countTheVowels("dog").toString() + " vowels.");
-//console.log("The word 'dog' has " + countTheConsonants("dog").toString() + " consonants.");
-
 function getVowelCount(input: string)
 {
     //let wordArray: string[] = Object.assign([], input);
@@ -11,7 +6,7 @@ function getVowelCount(input: string)
     for(let i = 0; i < input.length; i++)
     {
         let letter: string = input.charAt(i);
-        if (isVowel(letter))
+        if (vowelOrConsonant(letter) == "V")
         {
             vowelCount++;
         }
@@ -20,6 +15,7 @@ function getVowelCount(input: string)
     return vowelCount;
 }
 
+//Uses input text (vowelword) to getVowelCount and updates HTML
 function countVowels(): void{
     let word = (document.getElementById("vowelWord") as HTMLInputElement).value;
     let numberOfVowels: number = getVowelCount(word);
@@ -28,12 +24,14 @@ function countVowels(): void{
 
 }
 
+//Uses input text(consonantWord) to getConsonantCount and updates HTML
 function countConsonants(): void{
     let word = (document.getElementById("consonantWord") as HTMLInputElement).value;
     let numberOfCons: number = getConsonantCount(word);
     let output: string = "The word has " + numberOfCons + " consonants.";
     document.getElementById("consonantOutput").innerHTML = output;
 }
+
 
 function getConsonantCount(input: string)
 {
@@ -42,7 +40,7 @@ function getConsonantCount(input: string)
     for(let i = 0; i < input.length; i++)
     {
         let letter: string = input.charAt(i);
-        if (!isVowel(letter))
+        if (vowelOrConsonant(letter) == "C")
         {
             consCount++;
         }
@@ -62,5 +60,28 @@ function isVowel(letter: string)
     else
     {
         return false;
+    }
+}
+
+
+function isVowelSimplified(letter: string)
+{
+    return ("aeiouAEIOU".indexOf(letter) != -1);
+}
+
+//takes input letter and uses regex to determine if letter is vowel, consonant or neither (special characters)
+function vowelOrConsonant(letter: string): string
+{
+    if ("aeiouAEIOU".indexOf(letter) != -1)
+    {
+        return "V";
+    }
+    else if ("bcdfghjklmnpqrstvxzyBCDFGHJKLMNPQRSTVXYZ".indexOf(letter) != -1)
+    {
+        return "C";
+    }
+    else
+    {
+        return "N";
     }
 }
