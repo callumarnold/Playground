@@ -1,7 +1,7 @@
-console.log("The word 'games' has " + countTheVowels("games").toString() + " vowels.");
-console.log("The word 'video' has " + countTheVowels("video").toString() + " vowels.");
-console.log("The word 'dog' has " + countTheVowels("dog").toString() + " vowels.");
-console.log("The word 'dog' has " + countTheConsonants("dog").toString() + " consonants.");
+//console.log("The word 'games' has " + countTheVowels("games").toString() + " vowels.");
+//console.log("The word 'video' has " + countTheVowels("video").toString() + " vowels.");
+//console.log("The word 'dog' has " + countTheVowels("dog").toString() + " vowels.");
+//console.log("The word 'dog' has " + countTheConsonants("dog").toString() + " consonants.");
 function countTheVowels(input) {
     //let wordArray: string[] = Object.assign([], input);
     var vowelCount = 0;
@@ -12,6 +12,14 @@ function countTheVowels(input) {
         }
     }
     return vowelCount;
+}
+function method() {
+    //var word = (document.getElementById("word") as HTMLInputElement).value;
+    var word = "hello";
+    //let numberOfVowels: number = countTheVowels(word);
+    //let output: string = "The word has " + numberOfVowels + " vowels.";
+    //document.getElementById("vowel").innerHTML = output;
+    document.getElementById("vowel").innerHTML = word;
 }
 function countTheConsonants(input) {
     var consCount = 0;
