@@ -45,21 +45,21 @@ p {
     font-family: fantasy;
 }
 
-#Vowel{
+#blueBorderDiv{
     padding: 10px;
     margin: 10px;
     border: 5px outset blue;
     text-align: center;
 }
 
-#vowelHeading{
+#blueDivHeading{
     text-align: center;
     font-family: fantasy;
     padding: 10px;
     margin: 10px;
 }
 
-#vowelForm{
+#blueDivForm{
     padding: 10px;
     margin: 10px;
 }

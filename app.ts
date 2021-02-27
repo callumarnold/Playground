@@ -21,14 +21,21 @@ function getVowelCount(input: string)
 }
 
 function countVowels(): void{
-    var word = (document.getElementById("word") as HTMLInputElement).value;
+    let word = (document.getElementById("vowelWord") as HTMLInputElement).value;
     let numberOfVowels: number = getVowelCount(word);
     let output: string = "The word has " + numberOfVowels + " vowels.";
-    document.getElementById("vowel").innerHTML = output;
+    document.getElementById("vowelOutput").innerHTML = output;
 
 }
 
-function countTheConsonants(input: string)
+function countConsonants(): void{
+    let word = (document.getElementById("consonantWord") as HTMLInputElement).value;
+    let numberOfCons: number = getConsonantCount(word);
+    let output: string = "The word has " + numberOfCons + " consonants.";
+    document.getElementById("consonantOutput").innerHTML = output;
+}
+
+function getConsonantCount(input: string)
 {
     let consCount: number = 0;
 

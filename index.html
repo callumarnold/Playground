@@ -4,19 +4,27 @@
     <link rel="stylesheet" href="styles.css">
     <title>TS Playground</title>
     <script src="app.js" defer></script>
-    <h1 id="mainheading">TypeScript Playground</h1>
+    <h1 id="mainheading">Callum Arnold's TypeScript Playground</h1>
     <ul id="navmenu">
       <li><a href="index.html" class="active">Home</a></li>
     </ul>
 </head>
 <body>
-    <div id="Vowel">
-      <heading id=vowelHeading> Count The Vowels! </heading>
-        <form id="vowelForm">
-            <input type="text" id="word" name="word">
+    <div id="blueBorderDiv">
+      <heading id=blueDivHeading> Count The Vowels! </heading>
+        <form id="#blueDivForm">
+            <input type="text" id="vowelWord" name="word">
         <button id="countVowelsBtn" type="button" onclick="countVowels()">Count Vowels!</button>
-        <p id="vowel"></p>
+        <p id="vowelOutput"></p>
         </form>
       </div>
+      <div id="blueBorderDiv">
+        <heading id=blueDivHeading> Count The Consonants! </heading>
+          <form id="#blueDivForm">
+              <input type="text" id="consonantWord" name="word">
+          <button id="countConsonantsBtn" type="button" onclick="countConsonants()">Count Consonants!</button>
+          <p id="consonantOutput"></p>
+          </form>
+        </div>
 </body>
 </html>

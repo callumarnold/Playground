@@ -14,12 +14,18 @@ function getVowelCount(input) {
     return vowelCount;
 }
 function countVowels() {
-    var word = document.getElementById("word").value;
+    var word = document.getElementById("vowelWord").value;
     var numberOfVowels = getVowelCount(word);
     var output = "The word has " + numberOfVowels + " vowels.";
-    document.getElementById("vowel").innerHTML = output;
+    document.getElementById("vowelOutput").innerHTML = output;
 }
-function countTheConsonants(input) {
+function countConsonants() {
+    var word = document.getElementById("consonantWord").value;
+    var numberOfCons = getConsonantCount(word);
+    var output = "The word has " + numberOfCons + " consonants.";
+    document.getElementById("consonantOutput").innerHTML = output;
+}
+function getConsonantCount(input) {
     var consCount = 0;
     for (var i = 0; i < input.length; i++) {
         var letter = input.charAt(i);
