@@ -3,7 +3,7 @@
 //console.log("The word 'dog' has " + countTheVowels("dog").toString() + " vowels.");
 //console.log("The word 'dog' has " + countTheConsonants("dog").toString() + " consonants.");
 
-function countTheVowels(input: string)
+function getVowelCount(input: string)
 {
     //let wordArray: string[] = Object.assign([], input);
     let vowelCount: number = 0;
@@ -20,17 +20,12 @@ function countTheVowels(input: string)
     return vowelCount;
 }
 
-function method()
-{
-    //var word = (document.getElementById("word") as HTMLInputElement).value;
-    var word = "hello";
+function countVowels(): void{
+    var word = (document.getElementById("word") as HTMLInputElement).value;
+    let numberOfVowels: number = getVowelCount(word);
+    let output: string = "The word has " + numberOfVowels + " vowels.";
+    document.getElementById("vowel").innerHTML = output;
 
-    //let numberOfVowels: number = countTheVowels(word);
-
-    //let output: string = "The word has " + numberOfVowels + " vowels.";
-
-    //document.getElementById("vowel").innerHTML = output;
-    document.getElementById("vowel").innerHTML = word;
 }
 
 function countTheConsonants(input: string)
