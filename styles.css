@@ -44,3 +44,22 @@ li a:hover:not(.active){
 p {
     font-family: fantasy;
 }
+
+#Vowel{
+    padding: 10px;
+    margin: 10px;
+    border: 5px outset blue;
+    text-align: center;
+}
+
+#vowelHeading{
+    text-align: center;
+    font-family: fantasy;
+    padding: 10px;
+    margin: 10px;
+}
+
+#vowelForm{
+    padding: 10px;
+    margin: 10px;
+}
