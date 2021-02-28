@@ -57,3 +57,26 @@ function vowelOrConsonant(letter) {
         return "N";
     }
 }
+//code taken from https://www.typescriptlang.org/docs/handbook/classes.html
+var Greeter = /** @class */ (function () {
+    function Greeter(message) {
+        this.greeting = message;
+    }
+    Greeter.prototype.greet = function () {
+        return "Hello, " + this.greeting;
+    };
+    return Greeter;
+}());
+function randomGreeting() {
+    var greetings = ["Hello", "Hiya", "Hi", "Hey"];
+    return greetings[getRandomInt(greetings.length)];
+}
+//code taken from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+}
+var greeter = new Greeter("human");
+greeter.greet();
+window.onload = function () {
+    document.getElementById("greeting").innerHTML = randomGreeting();
+};

@@ -85,3 +85,34 @@ function vowelOrConsonant(letter: string): string
         return "N";
     }
 }
+
+//code taken from https://www.typescriptlang.org/docs/handbook/classes.html
+class Greeter{
+    greeting: string;
+
+    constructor(message: string){
+        this.greeting = message;
+    }
+
+    greet(){
+        return "Hello, " + this.greeting;
+    }
+}
+
+function randomGreeting(): string{
+    let greetings: string[] = ["Hello", "Hiya", "Hi", "Hey"];
+    return greetings[getRandomInt(greetings.length)];
+
+}
+
+//code taken from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+}
+
+let greeter = new Greeter("human");
+greeter.greet();
+
+window.onload = () =>{
+    document.getElementById("greeting").innerHTML = randomGreeting();
+}
