@@ -99,6 +99,9 @@ class Greeter{
     }
 }
 
+let greeter = new Greeter("human");
+greeter.greet();
+
 function randomGreeting(): string{
     let greetings: string[] = ["Hello", "Hiya", "Hi", "Hey"];
     return greetings[getRandomInt(greetings.length)];
@@ -106,12 +109,12 @@ function randomGreeting(): string{
 }
 
 //code taken from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+//returns number between 0 and the given number
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
 
-let greeter = new Greeter("human");
-greeter.greet();
+
 
 window.onload = () =>{
     document.getElementById("greeting").innerHTML = randomGreeting();
