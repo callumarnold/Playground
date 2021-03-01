@@ -67,16 +67,17 @@ var Greeter = /** @class */ (function () {
     };
     return Greeter;
 }());
+var greeter = new Greeter("human");
+greeter.greet();
 function randomGreeting() {
     var greetings = ["Hello", "Hiya", "Hi", "Hey"];
     return greetings[getRandomInt(greetings.length)];
 }
 //code taken from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+//returns number between 0 and the given number
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
-var greeter = new Greeter("human");
-greeter.greet();
 window.onload = function () {
     document.getElementById("greeting").innerHTML = randomGreeting();
 };
