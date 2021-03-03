@@ -81,3 +81,35 @@ function getRandomInt(max) {
 window.onload = function () {
     document.getElementById("greeting").innerHTML = randomGreeting();
 };
+var HighScores = [];
+function refreshScores() {
+    var test = "";
+    HighScores.forEach(function (e) {
+        test = test + e.getHighScoreInfo();
+    });
+    return test;
+}
+function addLatestScore() {
+    var name = document.getElementById("scoreName").innerHTML;
+    var age = document.getElementById("scoreNumber").innerHTML;
+    var score = new HighScore(name, age);
+    document.getElementById("score1").innerHTML = score.name + score.score;
+}
+function addHighScore() {
+    var name = document.getElementById("scoreName").innerHTML;
+    var age = document.getElementById("scoreNumber").innerHTML;
+    var score = new HighScore(name, age);
+    HighScores.push(score);
+    document.getElementById("score1").innerHTML = refreshScores();
+}
+var HighScore = /** @class */ (function () {
+    function HighScore(pName, pScore) {
+        this.name = pName;
+        this.score = pScore;
+    }
+    HighScore.prototype.getHighScoreInfo = function () {
+        var score = this.name.toString() + this.score.toString();
+        return score;
+    };
+    return HighScore;
+}());

@@ -119,3 +119,51 @@ function getRandomInt(max) {
 window.onload = () =>{
     document.getElementById("greeting").innerHTML = randomGreeting();
 }
+
+var HighScores: HighScore[] = [];
+
+function refreshScores(){
+    let test: string = "";
+    HighScores.forEach(e => {
+        test = test + e.getHighScoreInfo();
+
+    });
+    return test;
+}
+
+function addLatestScore(){
+    let name = document.getElementById("scoreName").innerHTML;
+    let age = document.getElementById("scoreNumber").innerHTML;
+
+    let score = new HighScore(name, age);
+
+    document.getElementById("score1").innerHTML = score.name + score.score;
+}
+function addHighScore(){
+    let name = document.getElementById("scoreName").innerHTML;
+    let age = document.getElementById("scoreNumber").innerHTML;
+
+    let score = new HighScore(name, age);
+
+    HighScores.push(score);
+
+    document.getElementById("score1").innerHTML = refreshScores();
+}
+
+class HighScore{
+    name: string;
+    score: string;
+
+    constructor(pName: string, pScore: string)
+    {
+        this.name = pName;
+        this.score = pScore;
+
+    }
+
+    public getHighScoreInfo(): string{
+        let score = this.name.toString() + this.score.toString();
+        return score;
+
+    }
+}
