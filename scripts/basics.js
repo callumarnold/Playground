@@ -25,11 +25,15 @@ var LegoSet = /** @class */ (function () {
         console.log("Lego set " + this.setName + " created.");
     }
     LegoSet.prototype.calculatePrice = function (avgPricePerPiece) {
-        var price = this.setPcs * avgPricePerPiece;
-        return price;
+        this.setPrice = this.setPcs * avgPricePerPiece;
     };
     return LegoSet;
 }());
 //create new lego sets
 var HalloweenSet = new LegoSet("Halloween House", 2500, 5);
 var StarWarsSet = new LegoSet("Darth Vader's TIE Advanced", 1300);
+var avgPricePerPiece = 0.05;
+//use class method to calc price using avergae price 
+HalloweenSet.calculatePrice(avgPricePerPiece);
+//log price to console
+console.log("The price of " + HalloweenSet.setName + " is " + HalloweenSet.setPrice);

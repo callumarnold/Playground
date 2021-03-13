@@ -45,11 +45,18 @@ class LegoSet {
     }
 
     calculatePrice(avgPricePerPiece: number){
-        let price = this.setPcs * avgPricePerPiece;
-        return price;
+        this.setPrice = this.setPcs * avgPricePerPiece;
     }
 }
 
 //create new lego sets
 let HalloweenSet: LegoSet = new LegoSet("Halloween House", 2500, 5);
 let StarWarsSet: LegoSet = new LegoSet("Darth Vader's TIE Advanced", 1300);
+
+let avgPricePerPiece = 0.05;
+
+//use class method to calc price using avergae price 
+HalloweenSet.calculatePrice(avgPricePerPiece);
+
+//log price to console
+console.log(`The price of ${HalloweenSet.setName} is ${HalloweenSet.setPrice}`);
