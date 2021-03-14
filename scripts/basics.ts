@@ -40,23 +40,43 @@ class LegoSet {
         {
             this.minAge = pAge;
         }
-        console.log(`Lego set ${this.setName} created.`);
+        else
+        { 
+            this.minAge = 0;
+        }
+        if (avgPricePerPiece !== undefined)
+        {
+            this.calculatePrice(avgPricePerPiece);
+            console.log(`Lego set ${this.setName} price set to ${this.setPrice}.`);
+        }
+        console.log(`Lego set ${this.setName} created sucessfully.`);
         
     }
 
     calculatePrice(avgPricePerPiece: number){
         this.setPrice = this.setPcs * avgPricePerPiece;
     }
+
+    listDetails(){
+        return `Lego set name: ${this.setName}, Pcs: ${this.setPcs}, Min Age: ${this.minAge}, Price: ${this.setPrice}.`;
+    }
 }
 
-//create new lego sets
-let HalloweenSet: LegoSet = new LegoSet("Halloween House", 2500, 5);
-let StarWarsSet: LegoSet = new LegoSet("Darth Vader's TIE Advanced", 1300);
+//create piece per brick variable
+var avgPricePerPiece = 0.05;
 
-let avgPricePerPiece = 0.05;
+//create set array with two lego sets in it
+let legoSetArray: LegoSet[] = 
+    [new LegoSet("Halloween House", 2500, 5), new LegoSet("Darth Vader's TIE Advanced", 1300)];
 
-//use class method to calc price using avergae price 
-HalloweenSet.calculatePrice(avgPricePerPiece);
+//create new lego set and push to lego set array
+let DuploSet: LegoSet = new LegoSet("Happy Cats", 40);
+legoSetArray.push(DuploSet);
 
-//log price to console
-console.log(`The price of ${HalloweenSet.setName} is ${HalloweenSet.setPrice}`);
+//loop through array and log set details
+legoSetArray.forEach(function(legoSet) {
+    console.log(legoSet.listDetails());
+});
+
+
+

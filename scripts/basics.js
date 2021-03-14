@@ -22,18 +22,30 @@ var LegoSet = /** @class */ (function () {
          {
             this.minAge = pAge;
         }
-        console.log("Lego set " + this.setName + " created.");
+        else {
+            this.minAge = 0;
+        }
+        if (avgPricePerPiece !== undefined) {
+            this.calculatePrice(avgPricePerPiece);
+            console.log("Lego set " + this.setName + " price set to " + this.setPrice + ".");
+        }
+        console.log("Lego set " + this.setName + " created sucessfully.");
     }
     LegoSet.prototype.calculatePrice = function (avgPricePerPiece) {
         this.setPrice = this.setPcs * avgPricePerPiece;
     };
+    LegoSet.prototype.listDetails = function () {
+        return "Lego set name: " + this.setName + ", Pcs: " + this.setPcs + ", Min Age: " + this.minAge + ", Price: " + this.setPrice + ".";
+    };
     return LegoSet;
 }());
-//create new lego sets
-var HalloweenSet = new LegoSet("Halloween House", 2500, 5);
-var StarWarsSet = new LegoSet("Darth Vader's TIE Advanced", 1300);
+//create piece per brick variable
 var avgPricePerPiece = 0.05;
-//use class method to calc price using avergae price 
-HalloweenSet.calculatePrice(avgPricePerPiece);
-//log price to console
-console.log("The price of " + HalloweenSet.setName + " is " + HalloweenSet.setPrice);
+//create set array with two lego sets in it
+var legoSetArray = [new LegoSet("Halloween House", 2500, 5), new LegoSet("Darth Vader's TIE Advanced", 1300)];
+//create new lego set and push to lego set array
+var DuploSet = new LegoSet("Happy Cats", 40);
+legoSetArray.push(DuploSet);
+legoSetArray.forEach(function (legoSet) {
+    console.log(legoSet.listDetails());
+});
